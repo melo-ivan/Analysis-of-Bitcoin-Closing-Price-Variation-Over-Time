@@ -15,7 +15,7 @@ O Bitcoin é uma criptomoeda de grande relevância no mercado financeiro atual. 
 ## Instruções de Uso
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SeuUsuario/seu-repositorio.git
+   git clone https://github.com/Analysis-of-Bitcoin-Closing-Price-Variation-Over-Time.git
 Navegue até a pasta do projeto:
 Análise da Variação do Preço de Fechamento do Bitcoin
 
