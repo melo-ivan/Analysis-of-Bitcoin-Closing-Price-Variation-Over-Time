@@ -1,0 +1,12 @@
+/Análise-da-variação-do-preço-de-fechamento-do-Bitcoin-ao-longo-do-tempo
+
+│
+├── src/                # Código fonte
+│   └── seu_script.py   # Script principal
+│
+├── data/               # Dados
+│   └── bitcoin_data.csv # Dados do Bitcoin
+│
+├── README.md           # Descrição do projeto
+├── LICENSE             # Licença do projeto
+└── .gitignore          # Arquivos a serem ignorados pelo Git
