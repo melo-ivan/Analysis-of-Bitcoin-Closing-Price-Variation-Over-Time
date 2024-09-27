@@ -1,0 +1,65 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Carregamento dos Dados do Google Drive
+file_id = "1aJmF3UUW59s3oL3saqi3W9csnYUYs4O4"
+file_url = f"https://drive.google.com/uc?id={file_id}"
+bitcoin_data = pd.read_csv(file_url)
+
+# Análise Exploratória de Dados (EDA)
+print("Primeiras linhas do DataFrame:")
+print(bitcoin_data.head())
+print("\nInformações do DataFrame:")
+print(bitcoin_data.info())
+
+# Pré-processamento dos Dados
+bitcoin_data['Date'] = pd.to_datetime(bitcoin_data['Date'])
+
+# Visualização da Variação do Preço de Fechamento ao Longo do Tempo
+plt.figure(figsize=(10, 6))
+plt.plot(bitcoin_data['Date'], bitcoin_data['Close'], color='blue', marker='o', linestyle='-')
+plt.title('Variação do Preço de Fechamento do Bitcoin ao Longo do Tempo')
+plt.xlabel('Data')
+plt.ylabel('Preço de Fechamento (USD)')
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# Visualização do Volume de Negociação ao Longo do Tempo
+plt.figure(figsize=(10, 6))
+plt.plot(bitcoin_data['Date'], bitcoin_data['Volume'], color='green', marker='o', linestyle='-')
+plt.title('Volume de Negociação do Bitcoin ao Longo do Tempo')
+plt.xlabel('Data')
+plt.ylabel('Volume')
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# Relatório
+report = """
+Relatório de Análise da Variação do Preço de Fechamento do Bitcoin ao Longo do Tempo
+
+1. Análise Exploratória de Dados (EDA):
+   - Foram carregadas as primeiras linhas do DataFrame para visualização inicial.
+   - Verificou-se as informações do DataFrame, incluindo os tipos de dados e a presença de dados nulos.
+
+2. Pré-processamento dos Dados:
+   - A coluna 'Date' foi convertida para o tipo datetime para garantir que as datas sejam interpretadas corretamente.
+
+3. Visualizações Gráficas:
+   3.1. Variação do Preço de Fechamento ao Longo do Tempo:
+       - Um gráfico de linha foi plotado mostrando a variação do preço de fechamento do Bitcoin ao longo do tempo.
+
+   3.2. Volume de Negociação do Bitcoin ao Longo do Tempo:
+       - Um gráfico de linha foi plotado mostrando o volume de negociação do Bitcoin ao longo do tempo.
+
+Conclusão:
+- Com base nas visualizações, podemos observar tendências e padrões nos preços e volume de negociação do Bitcoin ao longo do tempo. 
+  A partir da visualização da variação do preço de fechamento, notamos uma tendência geral de alta ao longo dos anos, com algumas flutuações.
+  O volume de negociação parece seguir um padrão semelhante, aumentando com o tempo, o que indica um interesse crescente na criptomoeda.
+  Essas informações podem ser úteis para investidores e analistas interessados em compreender o comportamento do mercado de Bitcoin.
+"""
+
+print(report)
